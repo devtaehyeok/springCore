@@ -1,11 +1,7 @@
 package hello.core.order;
 
 import hello.core.AppConfig;
-import hello.core.discount.FixDiscountPolicy;
 import hello.core.member.*;
-import order.Order;
-import order.OrderService;
-import order.OrderServiceImpl;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

@@ -1,10 +1,8 @@
 package hello.core;
 
-import hello.core.discount.FixDiscountPolicy;
 import hello.core.member.*;
-import order.Order;
-import order.OrderService;
-import order.OrderServiceImpl;
+import hello.core.order.Order;
+import hello.core.order.OrderService;
 
 public class OrderApp {
     // psvm
