@@ -5,8 +5,8 @@ import hello.core.member.*;
 public class MemberApp {
     public static void main(String[] args) {
 
-
-        MemberService memberService = new MemberServiceImpl(new MemoryMemberRepository());
+        AppConfig appConfig = new AppConfig();
+        MemberService memberService = appConfig.memberService();
         Member memberA = new Member(1L, "memberA", Grade.VIP);
         memberService.join(memberA);
         Member findMember = memberService.findMember(1L);
