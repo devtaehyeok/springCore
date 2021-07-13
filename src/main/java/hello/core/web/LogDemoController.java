@@ -14,18 +14,18 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * request마다 다른 UUID가 나오는 것을 볼 수 있음.
  * provider는 필터 / 인터셉터로 변경할 수 있음 {@See webMVC}
+ * proxyMode를 사용하면 가짜 객체를 만들어 주입해줌.
  */
 @Controller
 @Description("웹 scope : request는 뜨는 요청이 없어서 빈이 없는데 주입을 요청하면 처음에 오류남. - provider 써야함.")
 @RequiredArgsConstructor
 public class LogDemoController {
-    private final ObjectProvider<MyLogger> myLoggerProvider;
+    private final MyLogger myLogger;
     private final LogDemoService logDemoService;
 
     @RequestMapping("log-demo")
     @ResponseBody
     public String logDemo(HttpServletRequest request) {
-        MyLogger myLogger = myLoggerProvider.getObject();
         String requestUrl = request.getRequestURI().toString();
         myLogger.setRequestUrl(requestUrl);
         myLogger.log("controller test");
