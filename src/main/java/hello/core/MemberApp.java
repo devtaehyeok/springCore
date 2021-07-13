@@ -10,7 +10,7 @@ public class MemberApp {
         // 스프링 IOC 컨테이너
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
         // 메서드 명이 스프링 빈 이름
-        MemberService memberService = applicationContext.getBean("memServiceBean", MemberService.class);
+        MemberService memberService = applicationContext.getBean("memberService", MemberService.class);
         OrderService orderService = applicationContext.getBean("orderService", OrderService.class);
         Member memberA = new Member(1L, "memberA", Grade.VIP);
         memberService.join(memberA);
