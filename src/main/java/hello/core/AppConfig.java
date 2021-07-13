@@ -16,7 +16,8 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class AppConfig {
     // 관례 따라 이름은 그냥 디폴트 쓰는게 좋음
-    @Bean(name = "memServiceBean")
+    /*@Bean(name = "memServiceBean")*/
+    @Bean
     public MemberService memberService() {
         return new MemberServiceImpl(memberRepository());
     }
